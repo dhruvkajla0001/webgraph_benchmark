@@ -1,0 +1,21 @@
+databases:
+
+  cognodb:
+    name: CognoDB
+    enabled: true
+
+  neo4j:
+    name: Neo4j
+    enabled: true
+
+  memgraph:
+    name: Memgraph
+    enabled: true
+
+  falkordb:
+    name: FalkorDB
+    enabled: true
+
+  arangodb:
+    name: ArangoDB
+    enabled: true
