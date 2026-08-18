@@ -10,13 +10,13 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 
-from benchmarks.cognodb import CognoDBAdapter
+from benchmarks.memgraph import MemgraphAdapter
 from benchmarks.runner import BenchmarkRunner
 
 
 def main():
 
-    db = CognoDBAdapter()
+    db = MemgraphAdapter()
 
     try:
 
@@ -43,7 +43,7 @@ def main():
 
             print("\n" + "=" * 60)
             print(
-                f"Running CognoDB workload: "
+                f"Running Memgraph workload: "
                 f"{workload_name}"
             )
             print("=" * 60)
@@ -63,7 +63,7 @@ def main():
         # ---------------------------------------------------------
 
         output = {
-            "database": "cognodb",
+            "database": "memgraph",
             "benchmark_type": "sequential",
             "warmup_iterations": 10,
             "iterations": 100,
@@ -82,7 +82,7 @@ def main():
 
         output_file = (
             results_dir
-            / "cognodb_sequential.json"
+            / "memgraph_sequential.json"
         )
 
         with output_file.open(

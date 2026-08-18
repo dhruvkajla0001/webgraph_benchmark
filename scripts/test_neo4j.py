@@ -1,17 +1,31 @@
+import sys
+import json
+
+from pathlib import Path
+from datetime import datetime, timezone
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+
 from benchmarks.neo4j import Neo4jAdapter
 from benchmarks.runner import BenchmarkRunner
 
 
 def main():
+
     db = Neo4jAdapter()
 
     try:
+
         db.connect()
 
         runner = BenchmarkRunner(
             executor=db.execute,
-            warmup_iterations=2,
-            iterations=5,
+            warmup_iterations=10,
+            iterations=100,
         )
 
         workloads = [
@@ -23,7 +37,10 @@ def main():
             "degree_aggregation",
         ]
 
+        results = []
+
         for workload_name in workloads:
+
             print("\n" + "=" * 60)
             print(
                 f"Running Neo4j workload: "
@@ -35,9 +52,57 @@ def main():
                 workload_name
             )
 
-            print(result.to_dict())
+            result_dict = result.to_dict()
+
+            results.append(result_dict)
+
+            print(result_dict)
+
+        # ---------------------------------------------------------
+        # Save results
+        # ---------------------------------------------------------
+
+        output = {
+            "database": "neo4j",
+            "benchmark_type": "sequential",
+            "warmup_iterations": 10,
+            "iterations": 100,
+            "timestamp_utc": datetime.now(
+                timezone.utc
+            ).isoformat(),
+            "results": results,
+        }
+
+        results_dir = PROJECT_ROOT / "results"
+
+        results_dir.mkdir(
+            parents=True,
+            exist_ok=True,
+        )
+
+        output_file = (
+            results_dir
+            / "neo4j_sequential.json"
+        )
+
+        with output_file.open(
+            "w",
+            encoding="utf-8",
+        ) as file:
+
+            json.dump(
+                output,
+                file,
+                indent=2,
+            )
+
+        print()
+        print(
+            f"Results saved to: {output_file}"
+        )
 
     finally:
+
         db.close()
 
 

@@ -1,0 +1,97 @@
+{
+  "database": "neo4j",
+  "workload": "concurrent_read_write",
+  "read_ratio": 0.8,
+  "write_ratio": 0.2,
+  "warmup_seconds": 10,
+  "measurement_seconds": 30,
+  "concurrency_levels": [
+    1,
+    10,
+    40
+  ],
+  "timestamp_utc": "2026-08-17T15:14:15.081615+00:00",
+  "results": [
+    {
+      "workload": "concurrent_read_write",
+      "concurrency": 1,
+      "warmup_seconds": 10,
+      "measurement_seconds": 30,
+      "read_ratio": 0.8,
+      "write_ratio": 0.19999999999999996,
+      "total_operations": 29,
+      "successful_operations": 29,
+      "failed_operations": 0,
+      "elapsed_seconds": 30.314,
+      "throughput_qps": 0.957,
+      "read_operations": 25,
+      "write_operations": 4,
+      "read_qps": 0.825,
+      "write_qps": 0.132,
+      "read_latency_ms": {
+        "p50": 273.056,
+        "p95": 2942.019
+      },
+      "write_latency_ms": {
+        "p50": 1593.526,
+        "p95": 3068.774
+      },
+      "error_rate": 0.0,
+      "retryable_conflicts": 0
+    },
+    {
+      "workload": "concurrent_read_write",
+      "concurrency": 10,
+      "warmup_seconds": 10,
+      "measurement_seconds": 30,
+      "read_ratio": 0.8,
+      "write_ratio": 0.19999999999999996,
+      "total_operations": 189,
+      "successful_operations": 189,
+      "failed_operations": 0,
+      "elapsed_seconds": 30.678,
+      "throughput_qps": 6.161,
+      "read_operations": 157,
+      "write_operations": 32,
+      "read_qps": 5.118,
+      "write_qps": 1.043,
+      "read_latency_ms": {
+        "p50": 1003.583,
+        "p95": 4515.489
+      },
+      "write_latency_ms": {
+        "p50": 1599.942,
+        "p95": 11494.764
+      },
+      "error_rate": 0.0,
+      "retryable_conflicts": 0
+    },
+    {
+      "workload": "concurrent_read_write",
+      "concurrency": 40,
+      "warmup_seconds": 10,
+      "measurement_seconds": 30,
+      "read_ratio": 0.8,
+      "write_ratio": 0.19999999999999996,
+      "total_operations": 240,
+      "successful_operations": 240,
+      "failed_operations": 0,
+      "elapsed_seconds": 33.79,
+      "throughput_qps": 7.103,
+      "read_operations": 190,
+      "write_operations": 50,
+      "read_qps": 5.623,
+      "write_qps": 1.48,
+      "read_latency_ms": {
+        "p50": 4575.929,
+        "p95": 7100.106
+      },
+      "write_latency_ms": {
+        "p50": 7099.164,
+        "p95": 16434.852
+      },
+      "error_rate": 0.0,
+      "retryable_conflicts": 0
+    }
+  ]
+}

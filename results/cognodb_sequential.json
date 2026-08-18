@@ -1,0 +1,105 @@
+{
+  "database": "cognodb",
+  "benchmark_type": "sequential",
+  "warmup_iterations": 10,
+  "iterations": 100,
+  "timestamp_utc": "2026-08-17T15:57:30.775101+00:00",
+  "results": [
+    {
+      "workload": "point_lookup",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 516.6162000386976,
+        "mean_ms": 808.3098900015466,
+        "p50_ms": 611.4701500046067,
+        "p95_ms": 2262.2766150452658,
+        "max_ms": 3952.458400046453
+      },
+      "errors": []
+    },
+    {
+      "workload": "filtered_lookup",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 518.3530999929644,
+        "mean_ms": 898.5040499980096,
+        "p50_ms": 614.3283000274096,
+        "p95_ms": 2673.5112249996746,
+        "max_ms": 2970.390199974645
+      },
+      "errors": []
+    },
+    {
+      "workload": "1_hop",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 515.0487000355497,
+        "mean_ms": 742.947468997445,
+        "p50_ms": 526.4902999915648,
+        "p95_ms": 2413.038074961514,
+        "max_ms": 3046.9506999943405
+      },
+      "errors": []
+    },
+    {
+      "workload": "2_hop",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 514.7162000066601,
+        "mean_ms": 694.4078869989607,
+        "p50_ms": 520.540749974316,
+        "p95_ms": 2291.499769987422,
+        "max_ms": 2585.0480000372045
+      },
+      "errors": []
+    },
+    {
+      "workload": "3_hop",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 514.4152999855578,
+        "mean_ms": 692.1002070029499,
+        "p50_ms": 519.9207499972545,
+        "p95_ms": 2374.9171100062085,
+        "max_ms": 2615.5256000347435
+      },
+      "errors": []
+    },
+    {
+      "workload": "degree_aggregation",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 4004.2107999906875,
+        "mean_ms": 6515.290839996887,
+        "p50_ms": 6711.051550024422,
+        "p95_ms": 7837.468784992234,
+        "max_ms": 8503.024099976756
+      },
+      "errors": []
+    }
+  ]
+}

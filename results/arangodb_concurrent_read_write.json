@@ -1,0 +1,97 @@
+{
+  "database": "arangodb",
+  "workload": "concurrent_read_write",
+  "read_ratio": 0.8,
+  "write_ratio": 0.19999999999999996,
+  "warmup_seconds": 10,
+  "measurement_seconds": 30,
+  "concurrency_levels": [
+    1,
+    10,
+    40
+  ],
+  "timestamp_utc": "2026-08-18T10:21:04.143992+00:00",
+  "results": [
+    {
+      "workload": "concurrent_read_write",
+      "concurrency": 1,
+      "warmup_seconds": 10,
+      "measurement_seconds": 30,
+      "read_ratio": 0.8,
+      "write_ratio": 0.19999999999999996,
+      "total_operations": 622,
+      "successful_operations": 622,
+      "failed_operations": 0,
+      "elapsed_seconds": 30.032,
+      "throughput_qps": 20.712,
+      "read_operations": 496,
+      "write_operations": 126,
+      "read_qps": 16.516,
+      "write_qps": 4.196,
+      "read_latency_ms": {
+        "p50": 47.231,
+        "p95": 52.149
+      },
+      "write_latency_ms": {
+        "p50": 49.75,
+        "p95": 65.148
+      },
+      "error_rate": 0.0,
+      "retryable_conflicts": 0
+    },
+    {
+      "workload": "concurrent_read_write",
+      "concurrency": 10,
+      "warmup_seconds": 10,
+      "measurement_seconds": 30,
+      "read_ratio": 0.8,
+      "write_ratio": 0.19999999999999996,
+      "total_operations": 5935,
+      "successful_operations": 5935,
+      "failed_operations": 0,
+      "elapsed_seconds": 30.056,
+      "throughput_qps": 197.468,
+      "read_operations": 4737,
+      "write_operations": 1198,
+      "read_qps": 157.608,
+      "write_qps": 39.859,
+      "read_latency_ms": {
+        "p50": 48.773,
+        "p95": 59.733
+      },
+      "write_latency_ms": {
+        "p50": 50.014,
+        "p95": 63.575
+      },
+      "error_rate": 0.0,
+      "retryable_conflicts": 0
+    },
+    {
+      "workload": "concurrent_read_write",
+      "concurrency": 40,
+      "warmup_seconds": 10,
+      "measurement_seconds": 30,
+      "read_ratio": 0.8,
+      "write_ratio": 0.19999999999999996,
+      "total_operations": 20123,
+      "successful_operations": 0,
+      "failed_operations": 20123,
+      "elapsed_seconds": 30.393,
+      "throughput_qps": 0.0,
+      "read_operations": 16084,
+      "write_operations": 4039,
+      "read_qps": 0.0,
+      "write_qps": 0.0,
+      "read_latency_ms": {
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "write_latency_ms": {
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "error_rate": 1.0,
+      "retryable_conflicts": 0
+    }
+  ]
+}

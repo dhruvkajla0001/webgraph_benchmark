@@ -10,13 +10,13 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 
-from benchmarks.cognodb import CognoDBAdapter
+from benchmarks.falkordb import FalkorDBAdapter
 from benchmarks.runner import BenchmarkRunner
 
 
 def main():
 
-    db = CognoDBAdapter()
+    db = FalkorDBAdapter()
 
     try:
 
@@ -43,7 +43,7 @@ def main():
 
             print("\n" + "=" * 60)
             print(
-                f"Running CognoDB workload: "
+                f"Running FalkorDB workload: "
                 f"{workload_name}"
             )
             print("=" * 60)
@@ -58,12 +58,8 @@ def main():
 
             print(result_dict)
 
-        # ---------------------------------------------------------
-        # Save results
-        # ---------------------------------------------------------
-
         output = {
-            "database": "cognodb",
+            "database": "falkordb",
             "benchmark_type": "sequential",
             "warmup_iterations": 10,
             "iterations": 100,
@@ -82,7 +78,7 @@ def main():
 
         output_file = (
             results_dir
-            / "cognodb_sequential.json"
+            / "falkordb_sequential.json"
         )
 
         with output_file.open(

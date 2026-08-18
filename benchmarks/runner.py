@@ -24,6 +24,9 @@ from typing import Any, Callable, Dict, Optional
 from benchmarks.metrics import calculate_latency_metrics
 from workloads.registry import WORKLOAD_REGISTRY
 from workloads.node_ids import sample_node_ids
+from workloads.concurrent_read_write import (
+    run_concurrent_read_write,
+)
 
 
 QueryExecutor = Callable[[str, Dict[str, Any]], Any]
@@ -234,6 +237,45 @@ class BenchmarkRunner:
                 latency_metrics.to_dict()
             ),
             errors=errors,
+        )
+
+    def run_concurrent_read_write(
+        self,
+        adapter_factory: Callable[[], Any],
+        node_ids: Optional[list[int]] = None,
+        concurrency: int = 10,
+        read_ratio: float = 0.80,
+        warmup_seconds: int = 10,
+        measurement_seconds: int = 30,
+    ) -> dict[str, Any]:
+        """
+        Run the concurrent read/write benchmark.
+
+        Unlike normal workloads, this workload requires:
+        - multiple database connections
+        - concurrent workers
+        - sustained execution
+        - read/write mixing
+
+        Therefore it is intentionally handled separately from
+        the sequential WORKLOAD_REGISTRY workloads.
+        """
+
+        if node_ids is None:
+            node_ids = sample_node_ids(1000)
+
+        if not node_ids:
+            raise ValueError(
+                "node_ids cannot be empty."
+            )
+
+        return run_concurrent_read_write(
+            adapter_factory=adapter_factory,
+            node_ids=node_ids,
+            concurrency=concurrency,
+            read_ratio=read_ratio,
+            warmup_seconds=warmup_seconds,
+            measurement_seconds=measurement_seconds,
         )
 
     def run_all(

@@ -1,0 +1,105 @@
+{
+  "database": "falkordb",
+  "benchmark_type": "sequential",
+  "warmup_iterations": 10,
+  "iterations": 100,
+  "timestamp_utc": "2026-08-18T08:20:30.487594+00:00",
+  "results": [
+    {
+      "workload": "point_lookup",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 1.2278000358492136,
+        "mean_ms": 3.7746869964757934,
+        "p50_ms": 3.244249994168058,
+        "p95_ms": 7.502125005703417,
+        "max_ms": 13.68859998183325
+      },
+      "errors": []
+    },
+    {
+      "workload": "filtered_lookup",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 1.6063000075519085,
+        "mean_ms": 3.218064993270673,
+        "p50_ms": 3.136399987852201,
+        "p95_ms": 4.72946498193778,
+        "max_ms": 12.766400002874434
+      },
+      "errors": []
+    },
+    {
+      "workload": "1_hop",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 1.5648999833501875,
+        "mean_ms": 2.295945001533255,
+        "p50_ms": 2.1042499865870923,
+        "p95_ms": 3.1480349920457225,
+        "max_ms": 8.639000006951392
+      },
+      "errors": []
+    },
+    {
+      "workload": "2_hop",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 1.3527999981306493,
+        "mean_ms": 1.9488529983209446,
+        "p50_ms": 1.903200027300045,
+        "p95_ms": 2.477359984186478,
+        "max_ms": 4.943899984937161
+      },
+      "errors": []
+    },
+    {
+      "workload": "3_hop",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 1.061099988874048,
+        "mean_ms": 2.0057529991026968,
+        "p50_ms": 1.9545499817468226,
+        "p95_ms": 2.7071499993326142,
+        "max_ms": 3.91579995630309
+      },
+      "errors": []
+    },
+    {
+      "workload": "degree_aggregation",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 231.36320000048727,
+        "mean_ms": 341.94500299869105,
+        "p50_ms": 284.4960000074934,
+        "p95_ms": 689.6277550025839,
+        "max_ms": 1005.5933999828994
+      },
+      "errors": []
+    }
+  ]
+}

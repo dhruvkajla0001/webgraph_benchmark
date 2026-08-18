@@ -1,0 +1,105 @@
+{
+  "database": "neo4j",
+  "benchmark_type": "sequential",
+  "warmup_iterations": 10,
+  "iterations": 100,
+  "timestamp_utc": "2026-08-17T15:26:45.340501+00:00",
+  "results": [
+    {
+      "workload": "point_lookup",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 8.677100006025285,
+        "mean_ms": 83.84019900287967,
+        "p50_ms": 93.5860000026878,
+        "p95_ms": 186.9529499701457,
+        "max_ms": 305.1131999818608
+      },
+      "errors": []
+    },
+    {
+      "workload": "filtered_lookup",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 9.038699965458363,
+        "mean_ms": 44.96570999966934,
+        "p50_ms": 14.509749977150932,
+        "p95_ms": 93.9524250163231,
+        "max_ms": 188.4822000283748
+      },
+      "errors": []
+    },
+    {
+      "workload": "1_hop",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 6.680399994365871,
+        "mean_ms": 38.995213996386155,
+        "p50_ms": 11.36605002102442,
+        "p95_ms": 94.90698500012513,
+        "max_ms": 182.83240002347156
+      },
+      "errors": []
+    },
+    {
+      "workload": "2_hop",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 5.084200005512685,
+        "mean_ms": 36.866056003491394,
+        "p50_ms": 10.153850016649812,
+        "p95_ms": 96.55029000714421,
+        "max_ms": 387.87440001033247
+      },
+      "errors": []
+    },
+    {
+      "workload": "3_hop",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 4.943899984937161,
+        "mean_ms": 21.04882100073155,
+        "p50_ms": 7.306999963475391,
+        "p95_ms": 80.76790002814958,
+        "max_ms": 262.2714000171982
+      },
+      "errors": []
+    },
+    {
+      "workload": "degree_aggregation",
+      "iterations": 100,
+      "warmup_iterations": 10,
+      "successful_iterations": 100,
+      "failed_iterations": 0,
+      "metrics": {
+        "count": 100,
+        "min_ms": 210.10989998467267,
+        "mean_ms": 573.101455004653,
+        "p50_ms": 309.6664000186138,
+        "p95_ms": 816.7864950373765,
+        "max_ms": 15082.119300030172
+      },
+      "errors": []
+    }
+  ]
+}

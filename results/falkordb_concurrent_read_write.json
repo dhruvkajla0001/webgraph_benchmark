@@ -1,0 +1,97 @@
+{
+  "database": "falkordb",
+  "workload": "concurrent_read_write",
+  "read_ratio": 0.8,
+  "write_ratio": 0.2,
+  "warmup_seconds": 10,
+  "measurement_seconds": 30,
+  "concurrency_levels": [
+    1,
+    10,
+    40
+  ],
+  "timestamp_utc": "2026-08-18T10:19:52.673099+00:00",
+  "results": [
+    {
+      "workload": "concurrent_read_write",
+      "concurrency": 1,
+      "warmup_seconds": 10,
+      "measurement_seconds": 30,
+      "read_ratio": 0.8,
+      "write_ratio": 0.19999999999999996,
+      "total_operations": 3032,
+      "successful_operations": 2424,
+      "failed_operations": 608,
+      "elapsed_seconds": 30.011,
+      "throughput_qps": 80.769,
+      "read_operations": 2424,
+      "write_operations": 608,
+      "read_qps": 80.769,
+      "write_qps": 0.0,
+      "read_latency_ms": {
+        "p50": 11.043,
+        "p95": 17.219
+      },
+      "write_latency_ms": {
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "error_rate": 0.2005,
+      "retryable_conflicts": 0
+    },
+    {
+      "workload": "concurrent_read_write",
+      "concurrency": 10,
+      "warmup_seconds": 10,
+      "measurement_seconds": 30,
+      "read_ratio": 0.8,
+      "write_ratio": 0.19999999999999996,
+      "total_operations": 13188,
+      "successful_operations": 10548,
+      "failed_operations": 2640,
+      "elapsed_seconds": 30.047,
+      "throughput_qps": 351.046,
+      "read_operations": 10548,
+      "write_operations": 2640,
+      "read_qps": 351.046,
+      "write_qps": 0.0,
+      "read_latency_ms": {
+        "p50": 23.617,
+        "p95": 52.872
+      },
+      "write_latency_ms": {
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "error_rate": 0.2002,
+      "retryable_conflicts": 0
+    },
+    {
+      "workload": "concurrent_read_write",
+      "concurrency": 40,
+      "warmup_seconds": 10,
+      "measurement_seconds": 30,
+      "read_ratio": 0.8,
+      "write_ratio": 0.19999999999999996,
+      "total_operations": 71430,
+      "successful_operations": 19291,
+      "failed_operations": 52139,
+      "elapsed_seconds": 30.082,
+      "throughput_qps": 641.275,
+      "read_operations": 57243,
+      "write_operations": 14187,
+      "read_qps": 641.275,
+      "write_qps": 0.0,
+      "read_latency_ms": {
+        "p50": 48.621,
+        "p95": 73.294
+      },
+      "write_latency_ms": {
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "error_rate": 0.7299,
+      "retryable_conflicts": 0
+    }
+  ]
+}
